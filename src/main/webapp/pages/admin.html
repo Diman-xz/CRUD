@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>UsersContains</title>
+    <title>Admin</title>
     <style type="text/css">
         .tg {
             border-collapse: collapse;
@@ -46,9 +46,11 @@
 </head>
 <body>
 <div th:align="center" class="tg">
+    <h1>Admin</h1>
+    <br/>
     <h2>Users contains</h2>
     <br/>
-    <h3><a href="/users/newUser">Add new User</a></h3>
+    <h3><a href="/admin/newUser">Add new User</a></h3>
     <br/>
     <table border="1" cellpadding="5">
         <tr>
@@ -66,9 +68,11 @@
             <td th:text="${user.surName}">surName</td>
             <td th:text="${user.phoneNumber}">phoneNumber</td>
             <td th:text="${user.email}">email</td>
-            <td><a th:href="@{/editUser/{id}(id=${user.id})}">edit</a></td>
-            <td><a th:href="@{/remove/{id}(id=${user.id})}">Delete</a></td>
+            <td><a th:href="@{/admin/editUser/{id}(id=${user.id})}">edit</a></td>
+            <td><a th:href="@{/admin/remove/{id}(id=${user.id})}">Delete</a></td>
         </tr>
+        <br/>
+        <a th:href="@{/logout}">logout</a>
     </table>
 </div>
 </body>

@@ -14,4 +14,6 @@ public interface UserDao {
     void edit(User user);
 
     User getById(long id);
+
+    User getUserByName(String name);
 }

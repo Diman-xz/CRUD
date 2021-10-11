@@ -5,7 +5,7 @@
 <body>
 <div align="center">
     <h2>Edit user</h2>
-    <form action="/editUser" method="post">
+    <form action="/admin/editUser" method="post">
         <table border="0" cellpadding="5">
             <tr>
                 <td>id:</td>
@@ -28,9 +28,17 @@
                 <td><input type="text" th:field="*{user.email}"/></td>
             </tr>
             <tr>
-                <td colspan="2"><input type="submit" value="Edit"></td>
+                <td>password:</td>
+                <td><input type="text" th:field="*{user.password}"/></td>
             </tr>
+            <input type="checkbox" name="checkBoxRoles" value="ROLE_USER"/>USER
+            <input type="checkbox" name="checkBoxRoles" value="ROLE_ADMIN"/>ADMIN
         </table>
+        <br/>
+        <td colspan="2"><input type="submit" value="Edit"></td>
+        <br/>
+        <br/>
+        <a th:href="@{/logout}">LOGOUT</a>
     </form>
 </div>
 </body>
